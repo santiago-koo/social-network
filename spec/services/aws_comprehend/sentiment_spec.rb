@@ -72,7 +72,9 @@ RSpec.describe AwsComprehend::Sentiment do
       end
 
       let(:text) { 'I hate you, but you are my love' }
-      let(:exception_message) { "Value 'ro' at 'languageCode'failed to satisfy constraint: Member must satisfy enum value set: [ar, hi, ko, zh-TW, ja, zh, de, pt, en, it, fr, es]" }
+      let(:exception_message) do
+        "Value 'ro' at 'languageCode'failed to satisfy constraint: Member must satisfy enum value set: [ar, hi, ko, zh-TW, ja, zh, de, pt, en, it, fr, es]"
+      end
 
       it 'returns recommended setiment with their respective scrores' do
         expect(service.success?).to eq(false)

@@ -12,15 +12,6 @@ module AwsComprehend
     end
 
     def execute
-      sentiment_score = response.sentiment_score
-
-      result = {
-        recommended_sentiment: response.sentiment,
-        positive_score: sentiment_score.positive,
-        negative_score: sentiment_score.negative,
-        neutral_score: sentiment_score.neutral,
-        mixed_score: sentiment_score.mixed
-      }
       return_message(true, result)
     rescue Aws::Comprehend::Errors::ValidationException => e
       log_errors(e)
@@ -31,6 +22,18 @@ module AwsComprehend
 
     def response
       @response ||= client.detect_sentiment(text: text_to_analize, language_code: dominant_language)
+    end
+
+    def result
+      sentiment_score = response.sentiment_score
+
+      {
+        recommended_sentiment: response.sentiment,
+        positive_score: sentiment_score.positive,
+        negative_score: sentiment_score.negative,
+        neutral_score: sentiment_score.neutral,
+        mixed_score: sentiment_score.mixed
+      }
     end
   end
 end
