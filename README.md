@@ -1,24 +1,109 @@
-# README
+# Social Network
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Table of Contents  
+[Getting Started](#getting-started)
 
-Things you may want to cover:
+[Installation](#installation)
 
-* Ruby version
+[Environments](#environments)
 
-* System dependencies
+[Troubleshooting](#troubleshooting)
 
-* Configuration
+[Continuous Integration](#continuous-integration)
 
-* Database creation
+[Branching](#branching)
 
-* Database initialization
+# Getting Started
 
-* How to run the test suite
+Installing Ruby '3.1.4' with you Ruby Version Manager (rvm or rbenv)
 
-* Services (job queues, cache servers, search engines, etc.)
+````sh
+rvm install 3.1.4
 
-* Deployment instructions
+or
 
-* ...
+rbenv install 3.1.4
+````
+
+Cloning the repository
+
+````sh
+git clone git@github.com:santiago-koo/social-network.git
+````
+
+Installing Postgrsql 15 through [postgresapp](https://postgresapp.com/) (MacOS)
+
+Creating **.env** file for environment variables with the following command:
+
+````sh
+cp .env.example .env
+````
+You must provide your Postgres database and AWS credentials.
+
+Also the project is dockerized if you don't want installing the stack separately, so you must have [Docker Desktop](https://www.docker.com/products/docker-desktop/), after that, you need to create the respective image with this command:
+
+````sh
+docker-compose build
+````
+
+# Installation
+
+## Setting up local database
+
+Creating databases.
+````sh
+rails db:create
+
+or
+
+docker-compose run --rm web rails db:create
+````
+
+Running migrations.
+````sh
+rails db:migrate
+
+or
+
+docker-compose run --rm web rails db:migrate
+````
+
+
+# Environments
+
+## Development
+
+Running local environment with the following command:
+
+````sh
+rails server
+
+or
+
+docker-compose up
+````
+
+To execute tests, run the following command:
+
+````sh
+docker-compose run --rm -e RAILS_ENV=test doitcenter_app rspec
+````
+
+## Staging
+
+TODO
+
+## Production
+
+TODO
+
+# Troubleshooting
+TODO
+
+# Continuous Integration
+
+TODO
+
+# Branching
+
+You can see this section in [CONTRIBUTING.md](CONTRIBUTING.md)
