@@ -50,6 +50,7 @@ gem 'sassc-rails'
 
 gem 'activeadmin', '~> 3.0'
 gem 'aws-sdk-comprehend', '~> 1.73'
+gem 'cancancan', '~> 3.5'
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'haml', '~> 6.1', '>= 6.1.1'
 

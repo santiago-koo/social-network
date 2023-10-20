@@ -98,6 +98,7 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -382,6 +383,7 @@ DEPENDENCIES
   activeadmin (~> 3.0)
   aws-sdk-comprehend (~> 1.73)
   bootsnap
+  cancancan (~> 3.5)
   capybara
   debug
   devise (~> 4.9, >= 4.9.2)
