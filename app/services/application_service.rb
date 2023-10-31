@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 module ApplicationService
+  Result = Struct.new(:success?, :data, :error, keyword_init: true)
+  private_constant :Result
+
   def return_message(success, data = nil, error = nil)
-    OpenStruct.new({ success?: success, data: data, error: error})
+    Result.new({ success?: success, data:, error: })
   end
 
   def log_errors(error)

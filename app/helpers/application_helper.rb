@@ -1,13 +1,4 @@
-module ApplicationHelper
-  # def current_auth_resource
-  #   if admin_signed_in?
-  #     current_admin
-  #   else
-  #     current_user
-  #   end
-  # end
+# frozen_string_literal: true
 
-  # def current_ability
-  #   Ability.new(current_auth_resource)
-  # end
+module ApplicationHelper
 end
